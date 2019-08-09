@@ -1,4 +1,4 @@
-package sesssion3;
+package session3;
 
 public class StudentResultProcessing extends Student {
 	private String name;
@@ -20,6 +20,38 @@ public class StudentResultProcessing extends Student {
 		classLevel=s.getClassLevel();
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public int getRollNumber() {
+		return rollNumber;
+	}
+
+	public void setRollNumber(int rollNumber) {
+		this.rollNumber = rollNumber;
+	}
+
+	public String getClassLevel() {
+		return classLevel;
+	}
+
+	public void setClassLevel(String classLevel) {
+		this.classLevel = classLevel;
+	}
+
 	public String result() {
 		if(gr1>=passingGrade && gr2>=passingGrade && gr3>=passingGrade) {
 			return "Pass";
