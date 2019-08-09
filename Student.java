@@ -43,10 +43,12 @@ public class Student {
 		this.classLevel = classLevel;
 	}
 	public static void main(String[] args) {
-		StudentResultProcessing[] stud=new StudentResultProcessing[3];
 		Scanner scan=new Scanner(System.in);
+		StudentResultProcessing[] stud=new StudentResultProcessing[3];
+		Student[] std=new Student[3];
 		for(int i=0;i<stud.length;i++) {
-			stud[i]=newSt(scan);
+			std[i]=createStudent(scan);
+			stud[i]=newSt(std[i],scan);
 			System.out.println("Name:"+stud[i].getName());
 			System.out.println("Phone Number:"+stud[i].getPhoneNumber());
 			System.out.println("Roll Number:"+stud[i].getRollNumber());
@@ -55,7 +57,7 @@ public class Student {
 		}
 		scan.close();
 	}
-	public static StudentResultProcessing newSt(Scanner scan) {
+	public static Student createStudent(Scanner scan) {
 		Student testStudent=new Student();
 		
 		System.out.print("Enter your name :");
@@ -69,7 +71,9 @@ public class Student {
 		
 		System.out.print("Enter your class:");
 		testStudent.setClassLevel(scan.next());
-		
+		return testStudent;
+	}
+	public static StudentResultProcessing newSt(Student testStudent,Scanner scan) {
 		System.out.print("Enter your Physics Marks:");
 		int pGr=scan.nextInt();
 		
@@ -80,8 +84,8 @@ public class Student {
 		int mGr=scan.nextInt();
 		
 		StudentResultProcessing rez=new StudentResultProcessing(testStudent,pGr,cGr,mGr);
-		
 		return rez;
 	}
 }
+	
 
