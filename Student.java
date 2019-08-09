@@ -1,4 +1,4 @@
-package sesssion3;
+package session3;
 
 import java.util.Scanner;
 
@@ -44,18 +44,19 @@ public class Student {
 	}
 	public static void main(String[] args) {
 		StudentResultProcessing[] stud=new StudentResultProcessing[3];
+		Scanner scan=new Scanner(System.in);
 		for(int i=0;i<stud.length;i++) {
-			stud[i]=newSt();
+			stud[i]=newSt(scan);
 			System.out.println("Name:"+stud[i].getName());
 			System.out.println("Phone Number:"+stud[i].getPhoneNumber());
 			System.out.println("Roll Number:"+stud[i].getRollNumber());
 			System.out.println("Class:"+stud[i].getClassLevel());
 			System.out.println("Result:"+stud[i].result());
 		}
+		scan.close();
 	}
-	public static StudentResultProcessing newSt() {
+	public static StudentResultProcessing newSt(Scanner scan) {
 		Student testStudent=new Student();
-		Scanner scan=new Scanner(System.in);
 		
 		System.out.print("Enter your name :");
 		testStudent.setName(scan.next());
@@ -79,9 +80,8 @@ public class Student {
 		int mGr=scan.nextInt();
 		
 		StudentResultProcessing rez=new StudentResultProcessing(testStudent,pGr,cGr,mGr);
-		scan.close();
+		
 		return rez;
 	}
 }
-	
 
